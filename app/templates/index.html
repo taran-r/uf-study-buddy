@@ -3,13 +3,17 @@
 <head>
     <title>UF Study Buddy</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Welcome to the UF Study Assistant</h1>
+    <h1 class="title">Welcome to the UF Study Assistant</h1>
     <h2>Ask a question about your class</h2>
-    <form method="POST">
+    <h3 class="what">Currently, this program only works for engineering students.</h3>
+    <form class = "frosted-glass" method="POST">
         <label for="course">Select your course:</label>
         <select name="course" id="course">
+            <option> </option>
             <option value="MAC2311">MAC2311 - Calc 1</option>
             <option value="MAC2312">MAC2312 - Calc 2</option>
             <option value="MAC2313">MAC2313 - Calc 3</option>
@@ -22,8 +26,8 @@
     </form>
 
     {% if response %}
-        <h3>Response:</h3>
-        <p>{{ response }}</p>
+        <h2>Response from the language model:</h3>
+        <p class="frosted-glass">{{ response }}</p>
     {% endif %}
 </body>
 </html>

@@ -1,6 +1,59 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f6eeee;
-    padding: 20px;
+body{
+    padding: 25px;
+    background-color: rgb(244, 190, 227);
 }
 
+.what {
+    background-color: rgba(255, 149, 220, 0.96);
+    border-style:outset;
+    border-width: 1px;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    border-color:rgba(30, 25, 28, 0.96);
+    outline:invert;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 10px 10px 10px; 
+}
+html{
+    font-family:'Rajdhani', sans-serif;
+}
+li {
+    line-height: 40px;
+    list-style-type:none;
+    padding: 20px;
+}
+.one {
+    list-style-image: url(percy\ \(1\).png);
+    font-family: 'Rajdhani', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: italic;
+    font-size: 20px;
+}
+.header {
+    position:relative; right: 20px; /* this is how i centered it */
+    text-align:center; /* this is how i centered it */
+    padding-top: 19px; 
+    border-bottom: dotted black;
+    border-width:20px;
+    margin: 0 auto;
+    font-family: 'Rajdhani', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.title{
+    font-size: 50px;
+    text-align:left;
+    font-family: 'Rajdhani', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn1 {
+    display: none;
+}
+.btn1.btn-2 {
+    display: block;
+}
+.frosted-glass{ 
+    border-radius: 8px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px 25px 25px 25px; 
+}
