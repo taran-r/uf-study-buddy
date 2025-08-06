@@ -11,7 +11,8 @@ Student's question:
 {user_question}
 
 Answer the question clearly, referencing only information from the syllabus. 
-However, in your response, do not be too formal. 
+However, in your response, be a little informal but keep everything professional.
+Answer the question in bullet points and format your response orderly, starting from Unit 1 to the last unit. 
 Your response should be in paragraph format and should not just take the text from the syllabus.
 Instead, analyze this text and provide a detailed response.
 """
