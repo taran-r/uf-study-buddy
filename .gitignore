@@ -165,6 +165,8 @@ config.py
 .dmypy.json
 dmypy.json
 
+navigator_api_keys.json
+
 # Pyre type checker
 .pyre/
 

@@ -2,21 +2,26 @@
 <html>
 <head>
     <title>UF Study Buddy</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <h1 class="title">Welcome to the UF Study Assistant</h1>
     <h2>Ask a question about your class</h2>
     <h3 class="what">Currently, this program only works for engineering students.</h3>
-    <form class = "frosted-glass" method="POST">
+    
+    <form class="frosted-glass" method="POST">
+        <label for="major">Select your major:</label>
+        <select name="major" id="major" onchange="populateCourses()">
+            <option value="">-- Select a Major --</option>
+            {% for major in majors %}
+                <option value="{{ major }}">{{ major }}</option>
+            {% endfor %}
+        </select><br><br>
+
         <label for="course">Select your course:</label>
         <select name="course" id="course">
-            <option> </option>
-            <option value="MAC2311">MAC2311 - Calc 1</option>
-            <option value="MAC2312">MAC2312 - Calc 2</option>
-            <option value="MAC2313">MAC2313 - Calc 3</option>
+            <option value="">-- Select a Course --</option>
         </select><br><br>
 
         <label for="question">Enter your question:</label><br>
@@ -26,10 +31,15 @@
     </form>
 
     {% if response %}
-        <h2>Response from the language model:</h3>
+        <h2>Response from the language model:</h2>
         <p class="frosted-glass">{{ response }}</p>
     {% endif %}
+
+    <!-- Inject the majors-to-courses data as JSON -->
+    <script id="majorToCoursesData" type="application/json">
+        {{ majors | tojson }}
+    </script>
+    <!-- Load your JS after the data is embedded -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-
-
