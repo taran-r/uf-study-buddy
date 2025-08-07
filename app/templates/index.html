@@ -6,40 +6,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">Welcome to the UF Study Assistant</h1>
-    <h2>Ask a question about your class</h2>
-    <h3 class="what">Currently, this program only works for engineering students.</h3>
-    
-    <form class="frosted-glass" method="POST">
-        <label for="major">Select your major:</label>
-        <select name="major" id="major" onchange="populateCourses()">
-            <option value="">-- Select a Major --</option>
-            {% for major in majors %}
-                <option value="{{ major }}">{{ major }}</option>
-            {% endfor %}
-        </select><br><br>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">UF Study Buddy</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Majors</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
 
-        <label for="course">Select your course:</label>
-        <select name="course" id="course">
-            <option value="">-- Select a Course --</option>
-        </select><br><br>
+    <div class="container">
+        <h1 class="title">Welcome to the UF Study Assistant</h1>
+        <h2>Ask a question about your class</h2>
+        <h3 class="what">Currently, this program only works for engineering students.</h3>
 
-        <label for="question">Enter your question:</label><br>
-        <textarea name="question" rows="4" cols="50"></textarea><br><br>
+        <form class="frosted-glass" method="POST">
+            <label for="major">Select your major:</label>
+            <select name="major" id="major" onchange="populateCourses()">
+                <option value="">-- Select a Major --</option>
+                {% for major in majors %}
+                    <option value="{{ major }}">{{ major }}</option>
+                {% endfor %}
+            </select><br><br>
 
-        <input type="submit" value="Ask">
-    </form>
+            <label for="course">Select your course:</label>
+            <select name="course" id="course">
+                <option value="">-- Select a Course --</option>
+            </select><br><br>
 
-    {% if response %}
-        <h2>Response from the language model:</h2>
-        <p class="frosted-glass">{{ response }}</p>
-    {% endif %}
+            <label for="question">Enter your question:</label><br>
+            <textarea name="question" rows="4" cols="50" placeholder="Type your question here..."></textarea><br><br>
 
-    <!-- Inject the majors-to-courses data as JSON -->
+            <input class="submit-button" type="submit" value="Ask">
+        </form>
+
+        {% if response %}
+            <h2>Response from the language model:</h2>
+            <p class="frosted-glass response-box">{{ response }}</p>
+        {% endif %}
+    </div>
+
     <script id="majorToCoursesData" type="application/json">
         {{ majors | tojson }}
     </script>
-    <!-- Load your JS after the data is embedded -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
