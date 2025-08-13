@@ -25,7 +25,57 @@ To use the *UF Study Buddy*, follow these directions:
     python -m venv venv
 
 **3. Activate the Virtual Environment:**
-    
+
+- On Windows:
+
+         venv\Scripts\activate 
+- On macOS/Linux:
+
+        source venv/bin/activate
+
 **4. Install Dependencies:**
 
-**5. Update key.json:**
+    pip install -r requirements.txt
+
+**5. Get your API key:**
+- If you are a UF student:
+    - Go to the Navigator Toolkit at https://ai.it.ufl.edu/navigator/
+    - Sign in with your GatorLink credentials
+    - Generate your free API key
+    - The base URL for Navigator is:
+```
+https://api.ai.it.ufl.edu/
+```
+- If you are NOT a UF student:
+    - You can use an OpenAI API key from https://platform.openai.com/
+    - Your base URL will be:
+```
+https://api.openai.com/v1
+```
+**6. Update key.json and openai_config.py:**
+
+- In the root folder of this project, there is already a file called key.json. Open it and replace the placeholders with your generated API key and the base URL. If you are a UF student using Navigator, replace the base URL with https://api.ai.it.ufl.edu/. If you are an external user, change it to the correct base URL for your provider.
+
+- Inside openai_config.py, find this line:
+```python
+key_file = r"your_file_path"
+```
+- Replace "your_file_path" with the absolute path to the key.json file in your project folder.
+
+  - Example:
+```python
+key_file = r"C:\Users\YourName\Documents\uf-study-buddy\key.json"
+```
+**7. Run the Program:**
+
+- Once everything is set up, start the Flask app by running:
+
+```bash
+python app.py
+```
+- Then, open your browser and go to:
+```
+http://127.0.0.1:5000
+```
+## License 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. The MIT License is a permissive license that allows reuse with minimal restrictions, making it ideal for open-source projects.
