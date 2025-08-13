@@ -145,7 +145,6 @@ env.bak/
 venv.bak/
 
 # Ignore config files containing secrets
-openai_config.py
 config.py
 .env
 

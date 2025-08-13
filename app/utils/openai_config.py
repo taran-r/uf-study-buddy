@@ -3,7 +3,7 @@ import os
 import json
 
 def configure_openai():
-    key_file = r"your_file_path"
+    key_file = r"your_file_path" # replace this with your file path 
 
     with open(key_file, 'r') as file:
         data = json.load(file)
