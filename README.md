@@ -71,7 +71,7 @@ key_file = r"C:\Users\YourName\Documents\uf-study-buddy\key.json"
 - Once everything is set up, start the Flask app by running:
 
 ```bash
-python app.py
+python run.py
 ```
 - Then, open your browser and go to:
 ```
