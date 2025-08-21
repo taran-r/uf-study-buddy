@@ -16,7 +16,7 @@ To use the *UF Study Buddy*, follow these directions:
 
 **1. Clone the Repository:**
 
-    git clone https://github.com/yourusername/uf-study-buddy.git
+    git clone https://github.com/taran-r/uf-study-buddy.git
     cd uf-study-buddy
 
 
